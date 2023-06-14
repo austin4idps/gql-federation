@@ -1,0 +1,48 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/gateway/src",
+  "monorepo": true,
+  "root": "apps/gateway",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/gateway/tsconfig.app.json"
+  },
+  "projects": {
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "member": {
+      "type": "application",
+      "root": "apps/member",
+      "entryFile": "main",
+      "sourceRoot": "apps/member/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/member/tsconfig.app.json"
+      }
+    },
+    "db": {
+      "type": "library",
+      "root": "libs/db",
+      "entryFile": "index",
+      "sourceRoot": "libs/db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/db/tsconfig.lib.json"
+      }
+    },
+    "enum": {
+      "type": "library",
+      "root": "libs/enum",
+      "entryFile": "index",
+      "sourceRoot": "libs/enum/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/enum/tsconfig.lib.json"
+      }
+    }
+  }
+}
