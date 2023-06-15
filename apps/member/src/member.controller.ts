@@ -6,7 +6,7 @@ export class MemberController {
   constructor(private readonly memberService: MemberService) {}
 
   @Get()
-  getHello(): string {
-    return this.memberService.getHello();
+  getHealthCheck(): string {
+    return `I'm Alive`;
   }
 }
