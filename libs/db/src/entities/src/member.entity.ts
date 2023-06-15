@@ -1,11 +1,9 @@
-
 import { MemberTypeEnum } from '@app/enum';
 import {
   Column,
   Entity,
-  JoinColumn,
   OneToOne,
-  PrimaryGeneratedColumn,
+  PrimaryGeneratedColumn
 } from 'typeorm';
 import { Profile } from './profile.entity';
 
@@ -21,6 +19,6 @@ export class Member {
   memberType: MemberTypeEnum;
 
   @OneToOne(() => Profile)
-  @JoinColumn()
+  // @JoinColumn()
   profile: Profile;
 }
