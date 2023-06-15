@@ -1,1 +1,1 @@
-export * from './enums/member-type.enum'
+export * from './enums/member-type.enum';

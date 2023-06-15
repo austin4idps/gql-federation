@@ -6,7 +6,6 @@ import { Member } from './entities/src/member.entity';
 import { Profile } from './entities/src/profile.entity';
 
 @Module({
-  
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
@@ -22,7 +21,7 @@ import { Profile } from './entities/src/profile.entity';
           username: configService.get('DB_USERNAME'),
           password: configService.get('DB_PASSWORD'),
           database: configService.get('DB_NAME'),
-          entities: [Member,Profile],
+          entities: [Member, Profile],
           synchronize: true,
         };
       },
