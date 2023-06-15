@@ -13,10 +13,4 @@ describe('MemberController', () => {
 
     memberController = app.get<MemberController>(MemberController);
   });
-
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(memberController.getHello()).toBe('Hello World!');
-    });
-  });
 });

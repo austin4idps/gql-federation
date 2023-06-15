@@ -1,10 +1,5 @@
 import { MemberTypeEnum } from '@app/enum';
-import {
-  Column,
-  Entity,
-  OneToOne,
-  PrimaryGeneratedColumn
-} from 'typeorm';
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Profile } from './profile.entity';
 
 @Entity({ name: 'member' })

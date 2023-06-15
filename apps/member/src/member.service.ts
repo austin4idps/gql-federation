@@ -1,5 +1,5 @@
-import { Member } from '@app/db/entities/src/member.entity';
-import { Profile } from '@app/db/entities/src/profile.entity';
+import { Member } from '@app/db/entities/member.entity';
+import { Profile } from '@app/db/entities/profile.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
