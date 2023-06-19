@@ -15,12 +15,12 @@ import { MemberService } from './member.service';
 export class MemberResolver {
   constructor(private memberService: MemberService) {}
   @Query(() => MemberModel)
-  async getMember(@Args('id') id: string): Promise<MemberModel> {
+  async member(@Args('id') id: string): Promise<MemberModel> {
     return await this.memberService.getUser(id);
   }
 
   @ResolveField('profile', () => ProfileModel)
-  async getPofile(@Parent() member: MemberModel): Promise<ProfileModel> {
+  async pofile(@Parent() member: MemberModel): Promise<ProfileModel> {
     return await this.memberService.getPofile(member.id);
   }
 
