@@ -31,6 +31,3 @@ import { AppService } from './app.service';
   providers: [AppService],
 })
 export class AppModule {}
-function ApolloServerPluginInlineTraceDisabled() {
-  throw new Error('Function not implemented.');
-}
