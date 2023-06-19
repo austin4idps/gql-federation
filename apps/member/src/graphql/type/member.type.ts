@@ -1,10 +1,10 @@
 import { MemberTypeEnum } from '@app/enum';
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
-import { ProfileModel } from './profile.model';
+import { ProfileType } from './profile.type';
 
 @ObjectType()
 @Directive('@key(fields: "id")')
-export class MemberModel {
+export class MemberType {
   @Field()
   id: string;
 
@@ -15,5 +15,5 @@ export class MemberModel {
   memberType: MemberTypeEnum;
 
   @Field({ nullable: true })
-  profile: ProfileModel;
+  profile: ProfileType;
 }

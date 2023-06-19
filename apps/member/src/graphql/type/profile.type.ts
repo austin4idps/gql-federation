@@ -2,7 +2,7 @@ import { Directive, Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 @Directive('@key(fields: "id")')
-export class ProfileModel {
+export class ProfileType {
   @Field({ nullable: true })
   id?: string;
 
