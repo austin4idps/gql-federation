@@ -1,5 +1,13 @@
 import { MemberTypeEnum } from '@app/enum';
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Company } from './company.entity';
 import { Profile } from './profile.entity';
 
 @Entity({ name: 'member' })
@@ -16,4 +24,18 @@ export class Member {
   @OneToOne(() => Profile)
   // @JoinColumn()
   profile: Profile;
+
+  @ManyToMany(() => Company, (c: Company) => c.customers)
+  @JoinTable({
+    name: 'companyCustomer', // table name for the junction table of this relation
+    joinColumn: {
+      name: 'memberId',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'companyId',
+      referencedColumnName: 'id',
+    },
+  })
+  companies: Company[];
 }
