@@ -1,4 +1,5 @@
 import { DbModule } from '@app/db';
+import { Company } from '@app/db/entities/company.entity';
 import { Member } from '@app/db/entities/member.entity';
 import { Profile } from '@app/db/entities/profile.entity';
 import {
@@ -19,7 +20,7 @@ import { MemberService } from './member.service';
       isGlobal: true,
     }),
     DbModule,
-    TypeOrmModule.forFeature([Member, Profile]),
+    TypeOrmModule.forFeature([Member, Profile, Company]),
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: {
