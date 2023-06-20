@@ -2,8 +2,10 @@ import { MemberTypeEnum } from '@app/enum';
 import {
   Column,
   Entity,
+  JoinColumn,
   JoinTable,
   ManyToMany,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -25,6 +27,10 @@ export class Member {
   // @JoinColumn()
   profile: Profile;
 
+  @ManyToOne(() => Company, (c: Company) => c.contact)
+  @JoinColumn()
+  company?: Company;
+
   @ManyToMany(() => Company, (c: Company) => c.customers)
   @JoinTable({
     name: 'companyCustomer', // table name for the junction table of this relation
@@ -37,5 +43,5 @@ export class Member {
       referencedColumnName: 'id',
     },
   })
-  companies: Company[];
+  companies?: Company[];
 }
